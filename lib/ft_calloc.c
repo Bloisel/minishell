@@ -14,9 +14,6 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*c;
-
-	if (count == SIZE_MAX || size == SIZE_MAX)
-		return (NULL);
 	c = malloc(count * size);
 	if (!c)
 		return (NULL);

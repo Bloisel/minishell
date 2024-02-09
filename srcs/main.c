@@ -12,12 +12,35 @@
 
 #include "../include/minishell.h"
 
-int main(int argc, char **argv, char **env)
+int	main(int argc, char **argv, char **env)
 {
-		printf("Hello World\n");
-		printf("%d\n", ft_atoi("205"));
-		printf("%d\n", argc);
-		printf("%s\n" , argv[1]);
-		printf("%s\n", env[1]);
-		return (0);
+	t_data dta;
+	char *test;
+	char **test2;
+	t_list *lst = NULL;
+	init_data(&dta);
+	printf("%d\n", argc);
+	printf("%s\n", argv[1]);
+	test = trytry(env , &dta);
+	test2 = separate(test);
+	multi_shouf(lst);
+		
+	//print_list(lst);
+	// -lreadine makefile  
+	// while (1)
+	//{
+	//	dta.input = readline("~$");
+	//	if (!dta.input)	
+	//	{
+	//		printf("\n");
+	//		break;
+	//	}
+	//	if (dta.input)
+	//	{
+	//	//add_history(dta.input);
+	//	printf("Execution commande etc etc input de nouveau \n");
+	//	}
+	//	free(dta.input);
+	//}
+	return (0);
 }

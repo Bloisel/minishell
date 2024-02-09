@@ -13,10 +13,12 @@
 NAME = minishell
 LIBFTNAME = libft.a
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra 
 DEBUG = -g -O0
 
 SRCS = srcs/main.c \
+	   srcs/parsing.c \
+	   srcs/utils.c
 
 OBJS = $(SRCS:.c=.o)
 
