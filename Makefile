@@ -6,7 +6,7 @@
 #    By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 01:43:02 by bloisel           #+#    #+#              #
-#    Updated: 2023/10/29 00:54:54 by bloisel          ###   ########.fr        #
+#    Updated: 2024/02/24 02:33:43 by bloisel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ LIBFTNAME = libft.a
 CFLAGS = -Wall -Werror -Wextra 
 DEBUG = -g -O0
 
+
 SRCS = srcs/main.c \
-	   srcs/parsing.c \
+	   srcs/cell.c \
 	   srcs/utils.c
 
 OBJS = $(SRCS:.c=.o)
@@ -40,7 +41,8 @@ header:
 	
 .c.o:
 	@echo "\033[0m${_BOLD}${_BLUE}.C to > .O :${_YELLOW} ${<:.c=.o} ${_END}"
-	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o} 
+
 
 $(NAME): $(OBJS)
 	@echo	"${_BOLD}${_BLUE}Make de : ${_BOLD}${_YELLOW}$(NAME) $(LIBFNAME) ${_END}"
@@ -50,7 +52,7 @@ $(NAME): $(OBJS)
 	@mv $(LIBFTPATH)$(LIBFTNAME) ./
 	@echo "${_BOLD}${_GREEN}Done 🙈${_END}"
 	@echo "${_BOLD}${_BLUE}Comilation ...${_END}"
-	@${CC} ${CFLAGS} $(OBJS) $(LIBFTNAME) -o $(NAME)
+	@${CC} ${CFLAGS} $(OBJS) $(LIBFTNAME) -o $(NAME) -lreadline
 	@echo "${_BOLD}${_GREEN}Done 🙈${_END}"
 
 clean: header
