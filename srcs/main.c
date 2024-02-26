@@ -6,7 +6,7 @@
 /*   By: bloisel <bloisel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 01:09:56 by bloisel           #+#    #+#             */
-/*   Updated: 2024/02/25 18:00:16 by bloisel          ###   ########.fr       */
+/*   Updated: 2024/02/26 03:59:51 by bloisel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ char *take_input()
 int	main() 
 {
 	t_data	dta;
-	t_list *lst;
 	char *input;	
-
+	t_list *lst = NULL;
 	init_data(&dta);
 	while (1)
 	{
@@ -37,9 +36,10 @@ int	main()
 		{
 			add_history(input);
 		}
-		sep_cell(input , lst);
+		// lst = cr_list(input);	
+		sep_cell(input , lst);	
 		print_list(lst);
-		free(input);
+		// free(input);
 	}
 	return (0);
 }
